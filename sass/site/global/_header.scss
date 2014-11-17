@@ -1,0 +1,15 @@
+@media only screen and (max-width: $bp__menu-button+1) {
+	.site-header {
+		overflow: auto;
+	}
+}
+
+.site-branding {
+	padding		: 1em;
+	margin		: 0 auto;
+	max-width	: $size__max-width;
+}
+
+.site-title {
+	text-align: center;
+}

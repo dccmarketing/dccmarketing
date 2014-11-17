@@ -1,0 +1,192 @@
+.main-navigation {
+	clear			: both;
+	display			: block;
+	float			: left;
+	width			: 100%;
+	margin-bottom	: $size__default-bot-marg;
+
+	ul {
+		list-style	: none;
+		margin		: 0;
+		padding-left: 0;
+		display 	: inline-block;
+
+		ul {
+			display		: inherit;
+			background	: $color__bg-menu-item-mobile;
+
+			@media only screen and (min-width: $bp__menu-button+1) {	
+				box-shadow	: 0 3px 3px rgba(0, 0, 0, 0.2);
+				float		: left;
+				position	: absolute;
+				top			: 2.5em;
+				left		: -999em;
+				z-index		: 99999;
+
+				ul {
+					left: -999em;
+					top	: 0;
+				}
+
+				li {
+					&:hover > ul {
+						left: 100%;
+					}
+				}
+
+				a {
+					color: $color__text-submenu;
+				}
+			} // breakpoint
+
+			ul {
+				a {
+					@media only screen and (max-width: $bp__menu-button) {
+						padding: 0.5em 3em;
+						border-left: none;
+					}
+				}
+			}
+
+			a {
+				@media only screen and (max-width: $bp__menu-button) {
+					padding: 0.5em 2em;
+				}
+
+				@media only screen and (min-width: $bp__menu-button+1) {
+					width: 200px;
+				}
+			}
+
+			:hover > a {
+			}
+
+			a:hover {
+			}
+
+			@media only screen and (max-width: $bp__menu-button) {
+				li {
+
+					&:last-child {
+						padding-bottom: 0;
+					}
+				}
+			}
+		} // .submenu ul
+
+		li:hover > ul {
+			left: 0;
+		}
+	} // first-level ul
+
+	li {
+
+		@media only screen and (min-width: $bp__menu-button+1) {	
+			float	: left;
+			position: relative;
+		}
+
+		&:hover > a {
+			background: $color__bg-menu-item-mobile;
+			color: $color__text-menu-mobile-hover;
+
+			@media only screen and (min-width: $bp__menu-button+1) {
+				color: $color__text-menu-hover;
+			}
+		}
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			&:hover > ul {
+				display: block;
+			}
+		}
+	}
+	a {
+		padding 		: 0.5em 1em;
+		display			: block;
+		text-decoration	: none;
+		color 			: $color__text-menu-mobile;
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			color: $color__text-menu;
+		}
+	}
+
+	.current_page_item,
+	.current-menu-item,
+	.current-menu-parent,
+	.current_page_ancestor {
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			background: $color__bg-menu-current;
+		}
+
+		> a {
+			color: $color__text-menu-current;
+		}
+
+		&:hover > a {
+			color: $color__text-menu-current-hover;
+		}
+	}
+}
+
+// Center Menu
+.menu-default-container {
+	max-width	: $size__max-width;
+	margin		: 0 auto;
+	text-align	: center;
+}
+
+
+/* Small menu */
+.menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: $bp__menu-button) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display			: block;
+		width			: 100%;
+		border			: none;
+		line-height		: 1.25em;
+		font-size		: 1.25em;
+		box-shadow		: none;
+		border-radius	: 0;
+		text-shadow		: none;
+		background		: $color__bg-menu-button;
+		color 			: $color__text-menu-button;
+
+		&:hover {
+			border		: none;
+			box-shadow	: none;
+		}
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+	margin	: 0 0 $size__default-bot-marg;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float	: left;
+	width	: 50%;
+}
+
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+	float		: right;
+	text-align	: right;
+	width		: 50%;
+}
