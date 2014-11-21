@@ -4,6 +4,12 @@
 	float			: left;
 	width			: 100%;
 	margin-bottom	: $size__default-bot-marg;
+	background-image: linear-gradient(to bottom, #f05423 0%, #F7971E 100%);
+	background-color: #F47521;
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		text-align: center;
+	}
 
 	ul {
 		list-style	: none;
@@ -87,8 +93,8 @@
 		}
 
 		&:hover > a {
-			background: $color__bg-menu-item-mobile;
-			color: $color__text-menu-mobile-hover;
+			background 	: $color__bg-menu-item-mobile;
+			color 		: $color__text-menu-mobile-hover;
 
 			@media only screen and (min-width: $bp__menu-button+1) {
 				color: $color__text-menu-hover;

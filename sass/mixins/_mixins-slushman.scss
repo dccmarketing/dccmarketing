@@ -111,26 +111,6 @@
 }
 
 /**
- * Border radius with separate values for each corner
- */
-@mixin radiuscorners( $topleft, $topright, $botleft, $botright ) {
-	-webkit-border-top-left-radius		: $topleft;
-	-webkit-border-top-right-radius		: $topright;
-	-webkit-border-bottom-right-radius	: $botright;
-	-webkit-border-bottom-left-radius	: $botleft;
-	
-	-moz-border-radius-topleft			: $topleft;
-	-moz-border-radius-topright			: $topright;
-	-moz-border-radius-bottomright		: $botright;
-	-moz-border-radius-bottomleft		: $botleft;
-	
-	border-top-left-radius				: $topleft;
-	border-top-right-radius				: $topright;
-	border-bottom-right-radius			: $botright;
-	border-bottom-left-radius			: $botleft;
-}
-
-/**
  * Creates a shadow on an object
  * 
  * $x: h-shadow - horizontal positioning

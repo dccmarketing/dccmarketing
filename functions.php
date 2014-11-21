@@ -162,8 +162,8 @@ add_action( 'footer_right', 'custom_footer_right' );
  */
 function load_fonts() {
 
-	//wp_register_style( 'et-googleFonts', 'http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' );
-	//wp_enqueue_style( 'et-googleFonts' );
+	wp_register_style( 'et-googleFonts', 'http://fonts.googleapis.com/css?family=The+Girl+Next+Door|Oxygen' );
+	wp_enqueue_style( 'et-googleFonts' );
 
 } // load_fonts()
 add_action( 'wp_print_styles', 'load_fonts' );
@@ -351,4 +351,30 @@ function get_svg( $svg ) {
 	return $output;
 
 } // get_svg()
+
+
+/**
+ * Returns the URL of the featured image
+ * 
+ * @param 	int 		$postID 		The post ID
+ * @param 	string 		$size 			The image size to return
+ * 
+ * @return 	string | bool 				The URL of the featured image, otherwise FALSE
+ */
+function get_thumbnail_url( $postID, $size = 'thumbnail' ) {
+
+	if ( empty( $postID ) ) { return FALSE; }
+
+	$thumb_id = get_post_thumbnail_id( $postID );
+
+	if ( empty( $thumb_id ) ) { return FALSE; }
+
+	$thumb_array = wp_get_attachment_image_src( $thumb_id, $size, true );
+
+	if ( empty( $thumb_array ) ) { return FALSE; }
+	
+	return $thumb_array[0];
+
+} // get_thumbnail_url()
+
 
